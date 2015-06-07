@@ -3,6 +3,7 @@
   "description": "Node Server for Twitter Sentiment Analysis",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.12.4",
     "express": "^4.12.3",
     "jade": "^1.10.0",
     "twitter": "^1.2.5"

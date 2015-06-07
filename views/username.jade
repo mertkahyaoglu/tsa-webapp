@@ -1,66 +1,72 @@
 extends layout
 
 block content
-  .columns
-    .one-half.column
-      if total != 0
-        .chart
-    .one-half.column
-      nav.menu
-        span.menu-heading Son 100 Tweet
-        div
-          if total == 0
-            h2.error Tweet bulunamadı!
-          else
-            for tweet in tweets
-              if tweet.sentiment == "positive"
-                li.menu-item.text-open #{tweet.tweet}
-              else
-                li.menu-item.text-closed #{tweet.tweet}
+  .blankslate.capped
+    a(href="/")
+      h1 Twitter Duygu Analizi
+    p Tweetlerin ne hissediyor öğren!
+    iframe(src="https://ghbtns.com/github-btn.html?user=mertkahyaoglu&repo=tsa-webapp&type=star&count=true&size=large", frameborder="0", scrolling="0", width="140px", height="30px")
+  .container
+    .columns
+      .one-half.column
+        if total != 0
+          .chart
+      .one-half.column
+        nav.menu
+          span.menu-heading Son 100 Tweet
+          div
+            if total == 0
+              h2.error Tweet bulunamadı!
+            else
+              for tweet in tweets
+                if tweet.sentiment == "positive"
+                  li.menu-item.text-open #{tweet.tweet}
+                else
+                  li.menu-item.text-closed #{tweet.tweet}
 
-      if total > 20
-        .paginate-container
-          .pagination
-            - var n = 0
-            while n < total / 10
-              if page == n+1
-                a.current(href='/username/'+username+'/'+(n+1))= ++n
-              else
-                a(href='/username/'+username+'/'+(n+1))= ++n
-  script.
-    Highcharts.setOptions({
-     colors: ['#53db57', '#ea2d1c']
-    });
-    $('.chart').highcharts({
-      chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-      },
-      title: {
-        text: 'Pozitif ve negatif tweetlerin oranı'
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-      },
-      credits: {
-        enabled: false
-      },
-      plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: 'pointer',
-        dataLabels: {
+        if total > 20
+          .paginate-container
+            .pagination
+              - var n = 0
+              while n < total / 10
+                if page == n+1
+                  a.current(href='/username/'+username+'/'+(n+1))= ++n
+                else
+                  a(href='/username/'+username+'/'+(n+1))= ++n
+    script.
+      Highcharts.setOptions({
+       colors: ['#53db57', '#ea2d1c']
+      });
+      $('.chart').highcharts({
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+        },
+        title: {
+          text: 'Pozitif ve negatif tweetlerin oranı'
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        credits: {
           enabled: false
         },
-        showInLegend: true
-      }
-    },
-    series: [{
-      type: 'pie',
-      name: 'Oran',
-      data: [
-        ['Pozitif',   #{count['positive']}],
-        ['Negatif',   #{count['negative']}]
-      ]
-      }]
-    });
+        plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: false
+          },
+          showInLegend: true
+        }
+      },
+      series: [{
+        type: 'pie',
+        name: 'Oran',
+        data: [
+          ['Pozitif',   #{count['positive']}],
+          ['Negatif',   #{count['negative']}]
+        ]
+        }]
+      });

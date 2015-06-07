@@ -5,9 +5,11 @@
   "dependencies": {
     "express": "^4.12.3",
     "jade": "^1.10.0",
-    "react": "^0.13.1",
     "twitter": "^1.2.5"
   },
+  "scripts": {
+    "start": "node server.js"
+  }
   "devDependencies": {
     "browserify": "^9.0.8",
     "gulp": "^3.8.11",
@@ -15,5 +17,8 @@
     "gulp-nodemon": "^2.0.2",
     "gulp-streamify": "0.0.5",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }

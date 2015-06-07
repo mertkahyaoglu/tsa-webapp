@@ -2,8 +2,10 @@ extends layout
 
 block content
   .alt-container
-    img(src="img/twitterlogo.png")
+    img(src="/img/twitterlogo.png")
     h1 Tweetlerin ne hissediyor öğren!
+    if error
+      div.error #{error}
     .username
       .input-group
         input(type="text", placeholder="Twitter kullanıcı adın")

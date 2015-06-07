@@ -14,3 +14,5 @@ h1,h2,h3,h4,h5 {color: #4078C0}
 .username input {height: 50px;font-size: 18px;}
 .username button {height: 50px;}
 .error {color: #ff4949; padding: 10px;}
+.notfound {background-color: #ff4949;margin 100px;}
+.notfound h1 {color: #fff;margin: 260px auto;}

@@ -50,6 +50,8 @@ router.route('/username/:username').get(function(req, res) {
             count: counts
           }
         );
+      }else {
+        res.render('index', {error: "Böyle bir kullanıcı adı bulamadım :("});
       }
     });
 });
@@ -85,6 +87,8 @@ router.route('/username/:username/:page').get(function(req, res) {
             count: counts
           }
         );
+      }else {
+        res.render('index', {error: "Böyle bir kullanıcı adı bulamadım :("});
       }
     });
 });

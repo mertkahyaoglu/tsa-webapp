@@ -2,6 +2,8 @@ h1,h2,h3,h4,h5 {color: #4078C0}
 
 .chart {min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto}
 .blankslate {margin-bottom: 50px;background-color: #4078C0;}
+.blankslate a:hover h1{color: #0b458c !important;}
+.blankslate a {text-decoration: none}
 .blankslate h1 {color: #fff !important}
 .blankslate p {font-size: 18px;color: #fff !important}
 .input-block {width: 98%;}

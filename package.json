@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node server.js"
-  }
+  },
   "devDependencies": {
     "browserify": "^9.0.8",
     "gulp": "^3.8.11",

@@ -46,6 +46,7 @@ var trainData = [
 	["maximum özen ve hassasiyetle çalıştığım çabaladığım içinde bulunmakdan mutluluk duyduğum güzel filmim…", "positive"],
 	["pastırma sıcaklarını yakaladıkmı yollardayız mustafa hocamla  motosikletkocumustafatekin", "positive"],
 	["Ülkemizde telifle zengin olan birisi henüz görülmedi ama bizim için en değerli olan şey sevginizi", "positive"],
+	["Erdoğan ı arıyorum telefonlarıma çıkmıyor. Hahhaa", "positive"],
 	["güzel işler yapıyor bu çocuklar takip et ettir", "positive"],
 	["güzel dergi çooook kafa dengi", "positive"],
 	["mutlu bayramlar", "positive"],

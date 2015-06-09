@@ -28,6 +28,7 @@ router.route('/username/:username').get(function(req, res) {
   var username = req.params.username;
   var params = {screen_name: username, count:100};
   all_tweets = []
+  
   client.get('statuses/user_timeline', params,
     function(error, tweets, response){
       if (!error) {
